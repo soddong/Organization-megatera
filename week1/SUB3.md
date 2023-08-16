@@ -1,6 +1,8 @@
 # HTTP TCP로 구현하기
 그전에 c++로 소켓 구현하는 과정을 포스팅 한적 있다. [참고](https://velog.io/@soddong/%EC%B0%A8%EB%9F%89%ED%86%B5%EC%8B%A0-UDP-TCP-%EC%86%8C%EC%BC%93%ED%86%B5%EC%8B%A0)하자.
 
+![Alt text](image-3.png)      
+
 Server가 listen을 하고 있고, Client가 Socket Open 후 Connect 해오면 Server와의 연결이 성공 한 것. 이 후 서로 데이터를 주고받을 수 있게 된다.    
 하지만 HTTP는 데이터를 주고 받을 수 있는 양방향 프로그램이 아닌, 각각 독립적인 상황을 가정하고 단방향 프로그램을 작성할 것이다.
 
@@ -66,7 +68,8 @@ try(Socket socket = new Socket("example.com", 80)) {
     ...
 }
 ```
-위와 같이 사용하면, close 메서드를 명시할 필요가 없다. try 블록이 완료되면 자동으로 close 메서드 호출이 된다.
+위와 같이 사용하면, close 메서드를 명시할 필요가 없다. try 블록이 완료되면 자동으로 close 메서드 호출이 된다.     
+
 ** 참고! try문 없이 close문 메서드를 명시하지 않아도, GC가 자동으로 제거해준다. 다만, 언제 제거될지는 모름 **
 
 ## Server
