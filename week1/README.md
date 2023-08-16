@@ -1,1 +1,1 @@
-* [HTTP의 이해](SUB1.md)
+[HTTP의 이해](SUB1.md)
