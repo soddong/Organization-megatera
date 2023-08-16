@@ -1,6 +1,7 @@
-## HTTP (Hypertext Transfer Protocol) 란?
+# HTTP (Hypertext Transfer Protocol) 란?
 
-### 내맘대로 정의
+## 내맘대로 정의
+--- 
 hypertext는 초월 텍스트라는 의미로, HTTP란 텍스트뿐 아니라 그림, 동영상 등을 포함하는 전송 프로토콜 이라고 직역해볼 수 있겠다.   
 
 즉, *HTML를 전송할 때 사용하는 규칙을 정의한 것. 
@@ -18,6 +19,7 @@ Response (응답) : 서버 -> 클라이언트(브라우저)
 ex. 텍스트, 레이아웃 설명, 이미지, 비디오, 스크립트
 
 ## HTTP의 큰그림 (Architecture)
+--- 
 ![Alt text](image-1.png)
 (출처. [mdn web docs](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview))    
 
@@ -35,7 +37,7 @@ HTTPS (HTTP Secure) : TLS을 거친 HTTP
 
 
 ## HTTP 특징
-
+--- 
 디테일한 특징에 대해서 알아보자.
 
 * HTTP는 각각의 요청이 독립적   
@@ -46,7 +48,7 @@ HTTPS (HTTP Secure) : TLS을 거친 HTTP
 
 
 ## HTTP 구조
-
+--- 
 ### 1) 메시지 구조
 ![Alt text](image-4.png)
 (요청과 응답은 모두 구조가 동일하다.)
