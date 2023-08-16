@@ -48,10 +48,12 @@ HTTPS (HTTP Secure) : TLS을 거친 HTTP
 ## HTTP 구조
 
 ### 1) 메시지 구조
+![Alt text](image-4.png)
 (요청과 응답은 모두 구조가 동일하다.)
+
 * Start line 
 * Headers
-* 빈 줄
+* 빈 줄 (메타 정보가 전송되었음을 알려주는 black line)
 * Body    
 
 ### 2)  Method
