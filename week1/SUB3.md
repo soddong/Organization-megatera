@@ -1,13 +1,10 @@
-# HTTP TCP로 구현하기
-그전에 c++로 소켓 구현하는 과정을 포스팅 한적 있다. [참고](https://velog.io/@soddong/%EC%B0%A8%EB%9F%89%ED%86%B5%EC%8B%A0-UDP-TCP-%EC%86%8C%EC%BC%93%ED%86%B5%EC%8B%A0)하자.
+# HTTP Server
 
-![Alt text](image-3.png)      
+---
 
-Server가 listen을 하고 있고, Client가 Socket Open 후 Connect 해오면 Server와의 연결이 성공 한 것. 이 후 서로 데이터를 주고받을 수 있게 된다.    
-하지만 HTTP는 데이터를 주고 받을 수 있는 양방향 프로그램이 아닌, 각각 독립적인 상황을 가정하고 단방향 프로그램을 작성할 것이다.
-
-## Client
---- 
+### **Client (Class Socket)**
+---
+Socket Class는 소켓 클라이언트로, 서버에 연결을 요청하고 데이터를 전송하는 기능을 담는다. 
 ### **1) Connection**
 ```
 Socket socket = new Socket("example.com", 80)
@@ -16,7 +13,7 @@ Socket socket = new Socket("example.com", 80)
 
 ### **2) Request**
 ```
-GET http://example.com/HTTP/1.1        /*Start line*/
+GET http://example.com/HTTP/1.1      ㅉ  /*Start line*/
 (빈 줄)
 ```
 
@@ -72,65 +69,37 @@ try(Socket socket = new Socket("example.com", 80)) {
 
 ** 참고! try문 없이 close문 메서드를 명시하지 않아도, GC가 자동으로 제거해준다. 다만, 언제 제거될지는 모름 **
 
-## Server
---- 
+### **Server (Class ServerSocket)**
+ServerSocket Class는 서버용 소켓으로, 포트를 통해 클라이언트의 연결을 기다리고 데이터를 주고받는 기능을 담는다. 
+
+### **1) Listen**
+```
+ServerSocket listener = new ServerSocket(8080, 0);
+```
+ServerSocket을 생성하면, 클라이언트로부터 연결을 기다리는 상태가 된다.
+- port_num : 포트 넘버
+- backlog : 연결요청을 대기하는 큐의 크기
+
+### **2) Accept (About Connect)**
+```
+Socket socket = listener.accept();
+```
+기중인 클라이언트의 요청을 차례로 수락함으로써 데이터를 주고받을 수 있게 된다.
+
+그 후, Request -> Response에 대한 처리는 클라이언트와 동일하다.
 
 
-## Java 문법 
---- 
-1. unreported exception UnknownHostExeption   
-자바에서는 일어날 수 있는 에러에 대한 예외처리가 필요하다. 그렇지 않으면 Compile error가 발생한다. 왜지?   
+## **Blocking vs Non-Blocking**
+---
+* Blocking   
 
-2. Input / Output  
-[[참고](https://velog.io/@soddong/%EC%9E%90%EB%B0%94%EB%A1%9C-%EC%BD%94%ED%85%8C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)] 기존에 블로그에 input관련 정리해둔것과 함께 보기
-* Output  
+    요청을 하고 응답을 대기하는 함수를 호출할 때 스레드에서 발생하는 대기 현상.
 
-    ```
-    /* 1. OutputSream 그대로 보내기 */
-    OutputStream outputStream = socket.getOutputStream();
-    outputStream.write(message.getBytes());
-    ```
-    OutputStream은 ByteArray로만 보낼 수 있음 -> message를 ByteArray로 변환하여 보내기
+    즉, 스레드는 Wait 상태.
 
-    ```
-    /* 2. OutputSreamWriter */
-    OutputStream outputStream = socket.getOutputStream();
-    Writer writer = new OutputStreamWriter(outputStream);
+    ServerSocket의 Listen 상태에서 클라이언트의 Connection이 들어올때가지 다음 작업이 진행되지 않는 상태를 Blocking 상태라고 한다.
 
-    writer.write(message);
-    writer.flush();
-    ```
-    OutputStreamWriter를 사용하기 위해서는 인자로 outputStream를 넣어주어야 한다.
-    return 타입을 다양하게 출력할 수 있도록 인코딩 하기 위해서 통째로 넣어주는듯 하다.
 
-    Writer는 추상화 클래스이고, 문자 기반 출력 스트림의 최상위 클래스이다. 
-    OutputStreamWriter 클래스 선언할때 Writer의 상속을 받는 형태이기 때문에 Writer로 받아와도 된다. -> 사실 왜 이렇게 쓰는지, OutputStreamWriter로 받을때랑 어떤 차이가 있는지 와닿지 않는다. 이 부분 공부 필요
-    
-    위 방식이 Buffer도 존재하며, 효율적으로 동작한다고 한다.
+* Non-Blocking
 
-    추가로, 버퍼의 크기를 초과하지 않는한 데이터가 써지지않으므로, flush 해주어야함
-* Input
-
-    ```
-    1. InputStream
-    InputStream inputStream = socket.getInputStream();
-    byte[] bytes = new byte[1_000_000];
-    int size = inputStream.read(bytes);
-
-    byte[] data = Arrays.copyOf(bytes, size);   /* 사이즈만큼 자르기 */
-    String text = new String(data);             /* string으로 변환  */
-    ```
-    InputStream도 마찬가지로 byteArray로 입력을 받는다. 따라서 임의의 큰배열을 만들어주고, inputStream으로 읽어온다. 이후 사이즈만큼 잘라주고 String으로 변환해준다.
-
-    ```
-    2. InputStreamReader
-    InputStream inputStream = socket.getInputStream();
-    Reader reader = new InputStreamReader(inputStream);
-    CharBuffer charBuffer = CharBuffer.allocate(1_000_000);
-
-    reader.read(charBuffer);
-    charBuffer.flip();
-    String text = charBuffer.toString();
-    ```
-    reader가 자동으로 크기만큼 잘라주므로, 이방식을 사용할 경우 다시 자를 필요가 없다. 다만, charBuffer로 할당하는 과정에서 문자가 뒤집혀 들어가므로 flip 과정이 필요하다.
-    
+    스레드를 block 시키지 않고 요청에 대한 현재상태를 즉시 리턴한다.

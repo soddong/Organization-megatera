@@ -1,19 +1,4 @@
-# HTTP (Hypertext Transfer Protocol)
-## 학습 키워드
----
-- HTTP(Hypertext Transfer Protocol)
-- HTTP와 HTTPS의 차이(TLS)
-- 클라이언트-서버 모델
-- stateless와 stateful
-- HTTP Cookie와 HTTP Session
-- HTTP 메시지 구조
-    - HTTP 요청(Request)와 응답(Response)
-        - multipart/form-data
-    - HTTP 요청 메서드(HTTP request methods)
-        - 멱등성
-    - HTTP 응답 상태 코드(HTTP response status code)
-        - 리다이렉션
-
+# 1-1. HTTP (Hypertext Transfer Protocol)
 
 ## HTTP 정의
 --- 
@@ -70,7 +55,7 @@ HTTPS (HTTP Secure) : TLS을 거친 HTTP.
 
 ## HTTP Cookie와 HTTP Session
 --- 
-## 1) HTTP Cookie
+### 1) HTTP Cookie
 * What?   
 클라이언트의 키, 값, 유효시간, 도메인, 경로
 * Where?   
@@ -89,7 +74,7 @@ Stateless한 HTTP의 약점을 보완하기 위하여 -> 쿠키를 사용함으�
 자동 로그인 등 
 
 
-## 2) HTTP Session
+### 2) HTTP Session
 : 쿠키 기반, BUT 서버에서 관리. 서버에 쿠키와 세션 id를 함께 전달하여 서버에서 관리하도록 함.
 
 * 장점   
