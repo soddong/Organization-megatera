@@ -2,17 +2,17 @@
 
 ---
 ##
-### **Client (Class Socket)**
+## **Client (Class Socket)**
 ---
 Socket Class는 소켓 클라이언트로, 서버에 연결을 요청하고 데이터를 전송하는 기능을 담는다. 
 
-### **1) Connection**
+### 1) Connection
 ```
 Socket socket = new Socket("example.com", 80)
 ```
 위와 같이 host ip를 Socekt의 인자로 전달하면 자동으로 connect를 해준다.
 
-### **2) Request**
+### 2) Request
 ```
 GET http://example.com/HTTP/1.1      ㅉ  /*Start line*/
 (빈 줄)
@@ -47,7 +47,7 @@ System.out.println("request");
 ```
 writer를 통해 message를 Server로 보낸셈이다.
 
-### **3) Response**
+### 3) Response
 ```
 InputStream inputStream = socket.getInputStream();
 byte[] bytes = new byte[1_000_000];
@@ -60,7 +60,7 @@ System.out.println("response");
 ```
 text에 Server의 응답이 저장된다.
 
-### **4) Close**
+### 4) Close
 ```
 try(Socket socket = new Socket("example.com", 80)) {
     ...
@@ -70,10 +70,10 @@ try(Socket socket = new Socket("example.com", 80)) {
 
 ** 참고! try문 없이 close문 메서드를 명시하지 않아도, GC가 자동으로 제거해준다. 다만, 언제 제거될지는 모름 **
 ##
-### **Server (Class ServerSocket)**
+## **Server (Class ServerSocket)**
 ServerSocket Class는 서버용 소켓으로, 포트를 통해 클라이언트의 연결을 기다리고 데이터를 주고받는 기능을 담는다. 
 
-### **1) Listen**
+### 1) Listen
 ```
 ServerSocket listener = new ServerSocket(8080, 0);
 ```
@@ -81,7 +81,7 @@ ServerSocket을 생성하면, 클라이언트로부터 연결을 기다리는 �
 - port_num : 포트 넘버
 - backlog : 연결요청을 대기하는 큐의 크기
 
-### **2) Accept (About Connect)**
+### 2) Accept (About Connect)
 ```
 Socket socket = listener.accept();
 ```
@@ -99,7 +99,7 @@ Socket socket = listener.accept();
     즉, 스레드는 Wait 상태.
 
     ServerSocket의 Listen 상태에서 클라이언트의 Connection이 들어올때가지 다음 작업이 진행되지 않는 상태를 Blocking 상태라고 한다.
-
+## 
 
 * Non-Blocking
 

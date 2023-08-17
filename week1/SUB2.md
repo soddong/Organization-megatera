@@ -40,8 +40,8 @@ TCP (Transfer Control Protocol) / IP (Internet Protocol)
 > url의 역사   
 > 1994년 World Wide Web의 창시자인 Tim Berners-Lee에 의해 탄생. ->   
 > 2002년 최초의 URL 단축 서비스인 TinyURL을 만듦 (현재는 Bitly) -> *나중에 원리 공부해보기*
-
-
+##
+## Host
 * Host : 통신을 할 수 있는 네트워크에 연결된 기기 (장비)
 
 * IP (Internet Protocol) 주소 : 인터넷 프로토콜을 사용하는 네트워크에 연결된 모든 장치에 할당된 번호
