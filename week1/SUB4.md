@@ -1,6 +1,5 @@
 # Java HTTP Server
-
-
+##
 ### **Java HTTP Server**
 ---
 * HTTP Server의 high level의 API를 제공해줌 (TLS 등)
@@ -24,7 +23,7 @@
     exchange 자리에 HttpHandler 객체를 넣어주어야 하나, 이 객체는 인터페이스 이므로 Lambda식으로 표현이 가능하다.
 
 3) Handler를 통해 다양한 메서드 접근 가능
-
+##
 ### **Java NIO**
 ---
 앞서 등장했던 Stream 형식으로 입출력을 다루는 것이 아닌, 채널(Channel)을 통해 입출력을 다룸 -> Stream은 단방향, Channel은 양방향
@@ -34,7 +33,7 @@
 
 -> *사실 뭐가 다른건지 와닿지 않는다. 나중에 다시 공부해보기*
     
-
+##
 
 ### **Java Lambda Expresttion**
 ---
