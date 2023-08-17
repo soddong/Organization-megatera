@@ -1,10 +1,11 @@
 # HTTP Server
 
 ---
-
+##
 ### **Client (Class Socket)**
 ---
 Socket Class는 소켓 클라이언트로, 서버에 연결을 요청하고 데이터를 전송하는 기능을 담는다. 
+
 ### **1) Connection**
 ```
 Socket socket = new Socket("example.com", 80)
@@ -68,7 +69,7 @@ try(Socket socket = new Socket("example.com", 80)) {
 위와 같이 사용하면, close 메서드를 명시할 필요가 없다. try 블록이 완료되면 자동으로 close 메서드 호출이 된다.     
 
 ** 참고! try문 없이 close문 메서드를 명시하지 않아도, GC가 자동으로 제거해준다. 다만, 언제 제거될지는 모름 **
-
+##
 ### **Server (Class ServerSocket)**
 ServerSocket Class는 서버용 소켓으로, 포트를 통해 클라이언트의 연결을 기다리고 데이터를 주고받는 기능을 담는다. 
 
@@ -88,7 +89,7 @@ Socket socket = listener.accept();
 
 그 후, Request -> Response에 대한 처리는 클라이언트와 동일하다.
 
-
+##
 ## **Blocking vs Non-Blocking**
 ---
 * Blocking   

@@ -6,14 +6,14 @@
 TCP (Transfer Control Protocol) / IP (Internet Protocol)
 
 3-Layer 와 4-Layer을 합쳐서 일컫는 말.
-
+##
 ## TCP와 UDP
 --- 
 전송 계층의 대표적인 프로토콜
 * TCP : S<->C간 연결 후 데이터 전달 
 * UDP : 일방적으로 데이터 전달
 
-      
+##
 ## Socket과 Socket API
 --- 
 위 프로토콜은 Socket으로 데이터를 받음으로써 전달이 될수있고,Socket API를 통해 구현할 수 있다.
@@ -21,7 +21,7 @@ TCP (Transfer Control Protocol) / IP (Internet Protocol)
 * Socket : 프로세스 간 통신의 종착점   
 * Socket API : 통신에 대한 프로그래밍 하기 위해 사용하는 것
 
-
+##
 ## URI와 URL
 --- 
 ![Alt text](image-6.png)
@@ -52,7 +52,7 @@ TCP (Transfer Control Protocol) / IP (Internet Protocol)
 
 * Port : Host가 외부와 통신을 하기위한 통로. 각 포트는 프로세스 / 서비스와 연결 됨.
 
-
+##
 ## Java 문법
 ---
 
@@ -112,7 +112,9 @@ TCP (Transfer Control Protocol) / IP (Internet Protocol)
 
 
     Writer는 추상화 클래스이고, 문자 기반 출력 스트림의 최상위 클래스이다. 
-    OutputStreamWriter 클래스 선언할때 Writer의 상속을 받는 형태이기 때문에 Writer로 받아와도 됨. -> *사실 왜 이렇게 쓰는지, OutputStreamWriter로 받을때랑 어떤 차이가 있는지 와닿지 않는다. 이 부분 공부 필요*
+
+    OutputStreamWriter 클래스 선언할때 Writer의 상속을 받는 형태이기 때문에 Writer로 받아와도 됨.    
+    -> *사실 왜 이렇게 쓰는지, OutputStreamWriter로 받을때랑 어떤 차이가 있는지 와닿지 않는다. 이 부분 공부 필요*
     
     위 방식이 Buffer가 존재하여, 사용하기 편함
 
@@ -128,7 +130,9 @@ TCP (Transfer Control Protocol) / IP (Internet Protocol)
     byte[] data = Arrays.copyOf(bytes, size);   /* 사이즈만큼 자르기 */
     String text = new String(data);             /* string으로 변환  */
     ```
-    InputStream도 마찬가지로 byteArray로 입력을 받는다. 따라서 임의의 큰배열을 만들어주고, inputStream으로 읽어온다. 이후 사이즈만큼 잘라주고 String으로 변환해준다.
+    InputStream도 마찬가지로 byteArray로 입력을 받는다.    
+
+    따라서 임의의 큰배열을 만들어주고, inputStream으로 읽어온다. 이후 사이즈만큼 잘라주고 String으로 변환해준다.
 
     ```
     2. InputStreamReader
@@ -140,7 +144,9 @@ TCP (Transfer Control Protocol) / IP (Internet Protocol)
     charBuffer.flip();
     String text = charBuffer.toString();
     ```
-    reader가 자동으로 크기만큼 잘라주므로, 이방식을 사용할 경우 다시 자를 필요가 없다. 다만, charBuffer로 할당하는 과정에서 문자가 뒤집혀 들어가므로 flip 과정이 필요함
+    reader가 자동으로 크기만큼 잘라주므로, 이방식을 사용할 경우 다시 자를 필요가 없다.    
+    
+    다만, charBuffer로 할당하는 과정에서 문자가 뒤집혀 들어가므로 flip 과정이 필요함
 
 
 - Java try-with-resources   
