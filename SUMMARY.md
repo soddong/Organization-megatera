@@ -8,3 +8,6 @@
     * [HTTP Server](/week1/SUB3.md)
     * [Java HTTP Server](/week1/SUB4.md)
     * [Spring Web MVC](/week1/SUB5.md)
+
+* [02. REST API]
+    * [REST API란?](/week2/sub1.md)
