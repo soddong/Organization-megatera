@@ -1,6 +1,6 @@
 ## 학습 키워드
 
-## API (Application Programming Interface)
+## 1) API (Application Programming Interface)
     프로그램간 통신을 하도록 연결해주는 통로 
     --> 클라이언트 (브라우저, 모바일 앱), 서버 (DB 등) 간의 연결을 돕는 녀석.
 
@@ -47,7 +47,7 @@
         결국, Architecture는 구조와 방식을 정의한 것이고, Architecture Style는 이러한 아키텍쳐를 패턴화한것을 말함.
 
 
-## REST (Representational State Transfer)
+## 2) REST (Representational State Transfer)
 ------
 - web에서 App간 결합도를 낮추게 설계하는 Architecture Style
 
@@ -78,5 +78,11 @@ Server가 정보를 저장하는 것이 아닌, 매번 클라이언트에서 서
 요청에 대한 응답의 데이터에 해당 요청이 캐시 가능한지 여부를 명시해야함 --> 가능하다면 동일 요청이 왔을때 재사용할 수 있어야함
 
 * Uniform Interface   
-전체적인 시스템 아키텍처를 간단하고 잘 파악하도록 약속된 Interface
+구성요소 사이의 인터페이스가 균일해야 함
+![Alt text](image.png)
 
+* Layered System   
+계층으로 구성이 가능해야하며, 각 레이어에 속한 구성요소는 인접하지 않은 레이어의 구성요소를 볼 수 없어야 함
+
+* Code-On-Demand (Optional)   
+Code-On-Demand가 가능해야 하며, 서버가 네트워크를 통해 클라이언트에 프로그램을 전달하면 그 프로그램이 클라이언트에서 실행 될 수 있어야함. (not 필수)
