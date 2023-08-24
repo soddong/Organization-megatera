@@ -3,7 +3,7 @@
 - MIME type
 ###
 ## 1) URI & URL & URN
-<img src="image-1.png" width="600" height="300"/>   
+<img src="image-1.png" width="3000" height="1500"/>   
 
 ####
 ### URI (Uniform Resource Identifier)
