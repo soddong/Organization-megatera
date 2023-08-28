@@ -14,3 +14,7 @@
     * [URI & MIME type](/week2/sub2.md)
     * [Collection Pattern](/week2/sub3.md)
     * [Spring Web MVC](/week2/sub4.md)
+
+* [03. DTO/JSON/CORS](/week3/README.md)
+    * [DTO](/week3/sub1.md)
+    * [직렬화](/week3/sub2.md)
