@@ -20,3 +20,6 @@
     * [직렬화](/week3/sub2.md)
     * [Jackson ObjectMapper](/week3/sub3.md)
     * [CORS](/week3/sub4.md)
+
+* [04. Layered Architecture](/week4/README.md)
+    * [DTO](/week4/sub1.md)
