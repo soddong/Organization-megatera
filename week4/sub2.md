@@ -1,20 +1,38 @@
 ## 학습 키워드
-- 직렬화(Serialization)
-- 마샬링
-- JSON
+- DAO(Data Access Object)
+- List
+- Map
 
-## 직렬화 (Serialization)
-* 오브젝트를 다른 프로세스에 전달하기 위하여 포맷을 변환하는 것
-* Byte stream으로 변환
-* 
+## DAO (Data Access Object)
+* 정의    
+DB의 Data에 접근하기 위한 객체 (조회, 조작, 삭제 등)
+* 사용 이유   
+DB 접근을 위한 로직과 비지니스 로직을 분리하기 위함 -> 관심사의 분리
+* 아키텍쳐   
+    * 3-layered에서 Presentation -> Domain -> Data 중 Data영역의 역할을 수행하는 녀석.
 
-## 마샬링 (Marchaling)
-* 한 객체의 메모리에서 표현방식을 저장 또는 전송에 적합한 다른 데이터 형식으로 변환하는 과정.
-* 직렬화보다 더 큰 개념
+    * MVC 패턴의 Model의 역할
+## List   
+* 형태 : 배열 형태로 [1, 2, 3 ...] 형태로 데이터가 저장
+* 특징 : 순서 유지, 중복 허락
 
-## JSON
-* human-readable text 포맷
-* name/value 형태의 쌍으로 collection 타입
-* MIME 타입은 application/json
-* java에서는 jackson (Web 의존성 추가하여 사용)
-* DTO를 사용예로, B/E <-> F/E 간의 json 스키마로서 사용가능. 
+|자료형|설명|
+|------|---|
+|List|인터페이스|
+|ArrayList|클래스|
+## Map 
+* 형태 : key, value 형태로 데이터가 저장
+* 특징 : 순서 유지 x, 중복 허락 x
+
+|자료형|설명|
+|------|---|
+|Map|인터페이스|
+|HashMap|클래스|
+
+## 제너릭
+제네릭(Generic)은 클래스 내부에서 지정하는 것이 아닌 외부에서 사용자에 의해 지정되는 것을 의미.
+```
+List<Integer> list = new ArrayList<Integer>();
+Map<String, Integer> map = new HashMap<>();
+```
+

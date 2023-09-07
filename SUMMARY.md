@@ -23,3 +23,5 @@
 
 * [04. Layered Architecture](/week4/README.md)
     * [DTO](/week4/sub1.md)
+    * [Data Access](/week4/sub2.md)
+    * [Domain Model](/week4/sub3.md)
