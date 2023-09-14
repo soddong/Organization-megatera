@@ -29,3 +29,5 @@
 * [05. DI & Spring Test](/week5/README.md)
     * [Dependency Injection](/week5/sub1.md)
     * [Unit Test](/week5/sub2.md)
+    * [Spring Text](/week5/sub3.md)
+    * [TDD](/week5/sub4.md)
