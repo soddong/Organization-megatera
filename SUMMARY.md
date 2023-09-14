@@ -25,3 +25,7 @@
     * [DTO](/week4/sub1.md)
     * [Data Access](/week4/sub2.md)
     * [Domain Model](/week4/sub3.md)
+
+* [05. DI & Spring Test](/week5/README.md)
+    * [Dependency Injection](/week5/sub1.md)
+    
