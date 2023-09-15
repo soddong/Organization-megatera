@@ -7,7 +7,7 @@
 작은 단위의 테스트 케이스를 작성하고 이를 통과하는 코드를 추가하는 과정을 반복(TDD Cycle)하여 목표하는 코드를 작성하는 개발 방법론
 
 ## TDD Cycle
-<img src="image-1.png" width="2000" height="800">
+<img src="image-2.png" width="2000" height="800">
 1. Red : 실패하는 테스트 코드를 작성
 2. Green : 최대한 빨리 테스트를 통과시킴
 3. Blue : 리펙터링
