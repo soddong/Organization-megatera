@@ -36,5 +36,5 @@
 테스트 대상 시스템, 테스트를 하려는 대상.
 
 ** 유의 할것 **
-<img src="image-1.png" width="1500" height="500">
+<img src="image-1.png" width="3000" height="1000">   
 우리는 Unit Test를 많이 해야 신뢰성 있는 시스템을 만들 수 있다.
