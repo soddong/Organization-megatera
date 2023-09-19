@@ -34,3 +34,4 @@
 
 * [06. Database](/week6/README.md)
     * [Database](/week6/sub1.md)
+    * [Relation Model](/week6/sub2.md)
