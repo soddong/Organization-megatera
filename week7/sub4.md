@@ -1,28 +1,25 @@
 ## 학습 키워드
-- JDBC(Java Database Connectivity)
+- N + 1 problem
+- DDD의 Aggregate
+- `CascaseType.ALL`
+- `orphanRemoval`
+- Event Sourcing
+- JPA 어노테이션
+    - @OneToMany
+    - @JoinColumn
 
-## JDBC (Java Database Connectivity)
-* 정의 : Java에서 RDBMS를 사용할 수 있게 해주는 API   
--> 실제로 사용하기 위해서는 JDBC Driver가 필요!   
+## Relationship Mapping
+* 정의 : 객체의 참조 column과 참조 테이블의 외래키를 매핑하는 것
+* 특징 : 테이블의 PK를 멤버 변수로 갖지 않고 엔티티 객체 자체를 참조
+* 종류
+    - @OneToMany
+    - @JoinColumn
 
-![Alt text](image-1.png)   
+## N + 1 problem
+* 문제 : Entity를 조회(select)할때, 결과로 조회된 데이터 개수만큼 연관관계가 있는 데이터를 추가로 조회하는 쿼리 n개가 발생하는 현상
+* 참고 : https://velog.io/@jinyoungchoi95/JPA-%EB%AA%A8%EB%93%A0-N1-%EB%B0%9C%EC%83%9D-%EC%BC%80%EC%9D%B4%EC%8A%A4%EA%B3%BC-%ED%95%B4%EA%B2%B0%EC%B1%85
 
-* JDBC Driver   
-사용하고자 하는 JDBC 드라이버 로딩 --> DriverManager 클래스를 통해 로딩
-
-* Connection 객체   
-DriverManager를 통해 데이터베이스와 연결되는 세션(Session)인 Connection 객체를 생성
-
-* Statement 객체   
-Statement 객체는 작성된 SQL 쿼리문을 실행하기 위한 객체
-
-* ResultSet 객체
-Statement를 이용하여 ResultSet을 얻음
-
-
-## Spring JdbcTemplate
-* 정의   
-앞서 Driver 로딩 ~ Statement 객체 생성 해주는 과정들을 생략해주고, 쿼리만 작성하면 되게끔 도와주는 API
-
-* 내부 과정   
-Connection 획득 ~ Statement 준비 실행 -> 루프 실행 -> Connection / Statement 종료 -> Connection 동기화
+## DDD의 Aggregate
+## `CascaseType.ALL`
+## `orphanRemoval`
+## Event Sourcing
