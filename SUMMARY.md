@@ -39,3 +39,7 @@
 
 * [07. JPA](/week7/README.md)
     * [ORM](/week7/sub1.md)
+    * [Hibernate](/week7/sub2.md)
+    * [](/week7/sub3.md)
+    * [](/week7/sub4.md)
+    * [](/week7/sub5.md)
