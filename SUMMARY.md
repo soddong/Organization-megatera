@@ -36,3 +36,6 @@
     * [Database](/week6/sub1.md)
     * [Relation Model](/week6/sub2.md)
     * [JDBC](/week6/sub3.md)
+
+* [07. JPA](/week7/README.md)
+    * [ORM](/week7/sub1.md)
