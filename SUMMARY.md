@@ -34,5 +34,12 @@
 
 * [06. Database](/week6/README.md)
     * [Database](/week6/sub1.md)
-    * [Relation Model / Relational Algerbra](/week6/sub2.md)
-    * [Entity-Relationship Model](/week6/sub3.md)
+    * [Relation Model](/week6/sub2.md)
+    * [JDBC](/week6/sub3.md)
+
+* [07. JPA](/week7/README.md)
+    * [ORM](/week7/sub1.md)
+    * [Hibernate](/week7/sub2.md)
+    * [](/week7/sub3.md)
+    * [](/week7/sub4.md)
+    * [](/week7/sub5.md)
